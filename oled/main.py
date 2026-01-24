@@ -1,11 +1,11 @@
 import display
 import display.preview as preview
+from drawing.draw_time import draw_time
 
 fb = display.init_display()
 
 def draw_ui(draw):
-    draw.text((0, 0), "07:30", fill=255)
-    draw.text((0, 16), "ALARM SET", fill=255)
+    draw_time(draw)
 
 fb.draw(draw_ui)
 
