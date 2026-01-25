@@ -67,6 +67,9 @@ def check_alarms(poll, state: AlarmState):
         state.editing_alarm_2 = True
         state.editing_alarm_1 = False
         return
+    else:
+        state.editing_alarm_1 = False
+        state.editing_alarm_2 = False
 
     if pressed1 and released1:
         logger.info(f"Alarm 1 pressed and released, set to {not state.alarm1_enabled}")

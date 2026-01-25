@@ -25,31 +25,25 @@ def update_screen():
     fb.draw(draw_ui)
     preview.save_frame(fb)
 
+def check_buttons():
+    libs.check_alarms(buttons.poll(), state)
+
 update_screen()
 
-# button testing
-
-# activate alarm 1
+# testing
 libs.pressAlarm1(buttons)
-p = buttons.poll()
-libs.check_alarms(p, state)
-
-# draw screen
+check_buttons()
 update_screen()
 
-# activate alarm 2
 libs.pressAlarm2(buttons)
-p = buttons.poll()
-libs.check_alarms(p, state)
-
-# draw screen
+check_buttons()
 update_screen()
 
-# edit alarm 1
 libs.startHoldAlarm1(buttons)
-p = buttons.poll()
-libs.check_alarms(p, state)
+check_buttons()
+update_screen()
 
-# draw screen
+libs.endHoldAlarm1(buttons)
+check_buttons()
 update_screen()
 
