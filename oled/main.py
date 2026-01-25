@@ -20,15 +20,37 @@ buttons = input.init_buttons()
 def draw_ui(draw):
     libs.draw_time(draw)
     libs.draw_alarm_bells(draw,state)
+
+# draw screen
 fb.draw(draw_ui)
 preview.save_frame(fb)
 
 # button testing
-libs.startHoldAlarm1(buttons)
-libs.pressHour(buttons)
-libs.pressMinute(buttons)
 
+# activate alarm 1
+libs.pressAlarm1(buttons)
 p = buttons.poll()
 libs.check_alarms(p, state)
 
-libs.endHoldAlarm1(buttons)
+# draw screen
+fb.draw(draw_ui)
+preview.save_frame(fb)
+
+# activate alarm 2
+libs.pressAlarm2(buttons)
+p = buttons.poll()
+libs.check_alarms(p, state)
+
+# draw screen
+fb.draw(draw_ui)
+preview.save_frame(fb)
+
+# edit alarm 1
+libs.startHoldAlarm1(buttons)
+p = buttons.poll()
+libs.check_alarms(p, state)
+
+# draw screen
+fb.draw(draw_ui)
+preview.save_frame(fb)
+
