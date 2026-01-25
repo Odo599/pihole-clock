@@ -14,4 +14,6 @@ class AlarmState():
         self.alarm2 = dt.time(0,0,0)
         self.editing_alarm_1 = False
         self.editing_alarm_2 = False
+        self.alarm1held = False
+        self.alarm2held = False
 

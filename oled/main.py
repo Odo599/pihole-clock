@@ -1,4 +1,3 @@
-import time
 import logging
 
 import display
@@ -18,7 +17,7 @@ buttons = input.init_buttons()
 
 # ui testing
 def draw_ui(draw):
-    libs.draw_time(draw)
+    libs.draw_time(draw,state)
     libs.draw_alarm_bells(draw,state)
 
 def update_screen():
@@ -31,19 +30,15 @@ def check_buttons():
 update_screen()
 
 # testing
-libs.pressAlarm1(buttons)
-check_buttons()
-update_screen()
-
 libs.pressAlarm2(buttons)
 check_buttons()
 update_screen()
 
-libs.startHoldAlarm1(buttons)
+libs.startHoldAlarm2(buttons)
 check_buttons()
 update_screen()
 
-libs.endHoldAlarm1(buttons)
+libs.endHoldAlarm2(buttons)
 check_buttons()
 update_screen()
 

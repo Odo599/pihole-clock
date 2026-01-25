@@ -3,8 +3,13 @@ from PIL.ImageDraw import ImageDraw
 
 from .state import AlarmState
 
-def draw_time(draw):
-    time = dt.now().strftime("%H:%M")
+def draw_time(draw, state: AlarmState):
+    if state.editing_alarm_1:
+        time = state.alarm1.strftime("%H:%M")
+    elif state.editing_alarm_2:
+        time = state.alarm2.strftime("%H:%M")
+    else:
+        time = dt.now().strftime("%H:%M")
     draw.text(
         (64, 32), 
         time, 
@@ -15,6 +20,7 @@ def draw_time(draw):
 def draw_alarm_bells(draw: ImageDraw, state: AlarmState):
     if state.alarm1_enabled:
         f = 0
+        print(state.editing_alarm_1)
         if state.editing_alarm_1:
             f = 255
         draw.circle((8,8),4,f,255,2)

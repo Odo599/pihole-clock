@@ -43,12 +43,19 @@ def check_alarms(poll, state: AlarmState):
         elif event.name == "MINUTE" and event.type == "PRESS":
             minute_pressed = True
 
+    if released1:
+        state.alarm1held = False
+        state.editing_alarm_1 = False
+    if released2:
+        state.alarm2held = False
+        state.editing_alarm_2 = False
 
-    if held1 and held2:
+    if (held1 or state.alarm1held) and (held2 or state.alarm2held):
         logger.info("Both alarm buttons held, exiting")
         return
 
-    if held1:
+    if held1 or state.alarm1held:
+        state.alarm1held = True
         logger.info("Alarm 1 button held, setting to editing state")
         state.editing_alarm_1 = True
         state.editing_alarm_2 = False
@@ -62,14 +69,26 @@ def check_alarms(poll, state: AlarmState):
             state.alarm1 = add_time(state.alarm1,dt.timedelta(minutes=1))
             logger.info(f"Adding minute to Alarm 1, new time {state.alarm1}")
         return
-    elif held2:
+    elif held2 or state.alarm2held:
+        state.alarm2held = True
         logger.info("Alarm 2 button held, setting to editing state")
         state.editing_alarm_2 = True
         state.editing_alarm_1 = False
+        if hour_pressed and minute_pressed:
+            logger.info("Minute and hour pressed, resetting alarm 2 to midnight")
+            state.alarm2 = dt.time()
+        elif hour_pressed:
+            state.alarm2 = add_time(state.alarm2,dt.timedelta(hours=1))
+            logger.info(f"Adding hour to Alarm 2, new time {state.alarm2}")
+        elif minute_pressed:
+            state.alarm2 = add_time(state.alarm2,dt.timedelta(minutes=1))
+            logger.info(f"Adding minute to Alarm 2, new time {state.alarm2}")
         return
     else:
         state.editing_alarm_1 = False
         state.editing_alarm_2 = False
+        state.alarm1held = False
+        state.alarm2held = False
 
     if pressed1 and released1:
         logger.info(f"Alarm 1 pressed and released, set to {not state.alarm1_enabled}")
