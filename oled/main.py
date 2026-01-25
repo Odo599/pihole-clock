@@ -21,9 +21,11 @@ def draw_ui(draw):
     libs.draw_time(draw)
     libs.draw_alarm_bells(draw,state)
 
-# draw screen
-fb.draw(draw_ui)
-preview.save_frame(fb)
+def update_screen():
+    fb.draw(draw_ui)
+    preview.save_frame(fb)
+
+update_screen()
 
 # button testing
 
@@ -33,8 +35,7 @@ p = buttons.poll()
 libs.check_alarms(p, state)
 
 # draw screen
-fb.draw(draw_ui)
-preview.save_frame(fb)
+update_screen()
 
 # activate alarm 2
 libs.pressAlarm2(buttons)
@@ -42,8 +43,7 @@ p = buttons.poll()
 libs.check_alarms(p, state)
 
 # draw screen
-fb.draw(draw_ui)
-preview.save_frame(fb)
+update_screen()
 
 # edit alarm 1
 libs.startHoldAlarm1(buttons)
@@ -51,6 +51,5 @@ p = buttons.poll()
 libs.check_alarms(p, state)
 
 # draw screen
-fb.draw(draw_ui)
-preview.save_frame(fb)
+update_screen()
 

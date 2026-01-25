@@ -1,5 +1,4 @@
 from datetime import datetime as dt
-
 from PIL.ImageDraw import ImageDraw
 
 from .state import AlarmState
@@ -14,7 +13,6 @@ def draw_time(draw):
         font_size=30)
 
 def draw_alarm_bells(draw: ImageDraw, state: AlarmState):
-    print(draw.fill)
     if state.alarm1_enabled:
         f = 0
         if state.editing_alarm_1:
