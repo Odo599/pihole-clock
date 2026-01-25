@@ -1,10 +1,10 @@
 import logging
 import time
 
+
 import display
-import display.preview as preview
-import input
 import libs
+import input.config
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -20,9 +20,11 @@ def draw_ui(draw):
     libs.draw_time(draw,state)
     libs.draw_alarm_bells(draw,state)
 
+
 def update_screen():
     fb.draw(draw_ui)
-    preview.save_frame(fb)
+    fb.image.show()
+
 
 def check_buttons():
     libs.check_alarms(buttons.poll(), state)

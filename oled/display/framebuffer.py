@@ -1,5 +1,3 @@
-# display/framebuffer.py
-
 from PIL import Image, ImageDraw
 
 
