@@ -1,6 +1,6 @@
 # Alarm Clock
 ## What is it?
-My project is a simple alarm clock using a 128x64 OLED display. It has 7 buttons and you shall be able to set 2 different alarms.
+My project is a simple alarm clock using a 128x64 OLED display. It has 7 buttons and you shall be able to set 2 different alarms. It is NOT anything to do with pihole, I'm unsure why I called the repo that I think I got confused.
 
 ## Why I made it?
 I made this project since I don't particularly like my own alarm clock since it can only set a single alarm. This one will be able to set 2 and maybe in a new version I could add even more.
