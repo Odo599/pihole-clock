@@ -1,0 +1,8 @@
+Part,Qty,Manufacturer,Link,Unit Price,Item Cost (AUD),Shipping Cost (AUD),"Total (inc gst, AUD)",Description
+Raspberry Pi Zero 2 W,1,Raspberry Pi,,,,,,"This doesnt need to be bought, I already have one."
+2.42inch OLED Display Module (128x64px),1,Waveshare,https://core-electronics.com.au/242inch-oled-display-module-128x64px.html,$24.55,$24.55,$8.90,$24.55,"The main part of the clock, displays the time."
+Adafruit PCM5102 I2S DAC with Line Level Output - 112dB SNR,1,Adafruit,https://core-electronics.com.au/adafruit-pcm5102-i2s-dac-line-level-output-112db-snr.html,$8.65,$8.65,$0.00,$8.65,DAC for getting audio from the Raspberry Pi.
+3W Mini Audio Stereo Amplifier (W2.54),1,DFRobot,https://core-electronics.com.au/3w-mini-audio-stereo-amplifier-w2-54.html,$10.60,$10.60,$0.00,$10.60,Amplifier so that the audio is loud enough. 
+4/8 Ohm 3W Mini Speaker Arduino 2831/3128  ,2,Diymore PCB Store,https://www.aliexpress.com/item/1005009465741899.html?spm=a2g0o.tesla.0.0.1522O0U5O0U5Jc,$1.75,$1.75,$3.96,$6.29,The speaker that will be connected through 2 other boards.
+Mini Push Button Switch,7,Sparkfun,https://core-electronics.com.au/mini-push-button-switch.html,$0.52,$3.64,$0.00,$3.64,Buttons for interfacing with the clock.
+Hook-up Stranded Wire - Black (22 AWG),1,Sparkfun,https://core-electronics.com.au/mini-push-button-switch.html,$8.15,$8.15,$0.00,$8.15,Wire for connecting the various components.
