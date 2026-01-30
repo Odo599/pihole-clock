@@ -1,5 +1,5 @@
 from .config import *
-from .virtual import ButtonManager
+from .button_manager import ButtonManager
 
 def setup_gpio(buttonManager: ButtonManager):
     press_play   = lambda : buttonManager.press("PLAY")

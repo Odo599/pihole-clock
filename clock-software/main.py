@@ -33,5 +33,5 @@ def check_buttons():
 while True:
     check_buttons()
     update_screen()
-    time.sleep(0.01)
+    time.sleep(10)
 
