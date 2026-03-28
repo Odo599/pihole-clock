@@ -1,6 +1,11 @@
 # Alarm Clock
 ## What is it?
-My project is a simple alarm clock using a 128x64 OLED display. It has 7 buttons and you shall be able to set 2 different alarms. It is NOT anything to do with pihole, I'm unsure why I called the repo that I think I got confused. It is made entirely in Python.
+My project is a simple alarm clock using a 128x64 OLED display. It has 7 buttons and you shall be able to set 2 different alarms. The code is written in python. It has a speaker and holes for the speaker and will be able to play alarms/music when the alarm rings.
+
+## Future features?
+- Automatically start on boot
+- Music streaming from external server
+- Alarm presets
 
 ## Why I made it?
 I made this project since I don't particularly like my own alarm clock since it can only set a single alarm. This one will be able to set 2 and maybe in a new version I could add even more.
@@ -33,7 +38,13 @@ I made this project since I don't particularly like my own alarm clock since it 
 
 ## Images
 ![](Images/Main.png)
-*Side view of the alarm clock.*
+*View of the alarm clock.*
+
+![](Images/Back%20Case.png)
+*Back part of the case.*
+
+![](Images/Front%20Case.png)
+*Front part of the case.*
 
 ![](Images/Pins.png)
 *Wiring diagram made in google sheets*
